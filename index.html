@@ -1,0 +1,48 @@
+<!Doctype HTML>
+<html>
+<head>
+  <meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/style.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<div id="customAPP">
+<div class="container">
+
+<div class="row" id="latestYoutubeVideos">
+<div  v-for="(item, index) in results" class="col-lg-4 col-md-4 col-sm-2">
+                            	<div class="playlist-item">
+                                	<div class="thumbWrapper">
+									<div class="thumb-playlist">
+                                    	<div class="img-in">
+                                        	<a :href="staticContent+item.snippet.resourceId.videoId" target="_blank" :title="item.snippet.title"><img  :alt="item.snippet.title" style="width:100%;" :src="item.snippet.thumbnails.medium.url" alt=""></a>
+                                        </div>
+                                    </div>
+									</div>
+                                    <div class="playlist-info">
+                                        <a :href="staticContent+item.snippet.resourceId.videoId" target="_blank" class="title">{{item.snippet.title}}</a>
+                                        <a class="channel-name" target="_blank" :href="staticChannelLink+item.snippet.channelId">{{item.snippet.channelTitle}}<span>
+                                   </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+             </div>             </div>      
+ 
+</div>
+
+	<script src="js/app.js"> </script>
+
+<body>
+</body>
+<html>
